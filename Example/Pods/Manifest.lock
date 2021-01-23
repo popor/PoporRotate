@@ -1,0 +1,23 @@
+PODS:
+  - Masonry (1.1.0)
+  - PoporRotate (0.1.0)
+
+DEPENDENCIES:
+  - Masonry
+  - PoporRotate (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  PoporRotate:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PoporRotate: 9a856974688f68eee17b4e2e126828ac08f46b03
+
+PODFILE CHECKSUM: d8d1d8878ea9235b1aa0a381c6f92b15e4cfbe08
+
+COCOAPODS: 1.10.0

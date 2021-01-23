@@ -1,0 +1,6 @@
+framework module PoporRotate {
+  umbrella header "PoporRotate-umbrella.h"
+
+  export *
+  module * { export * }
+}

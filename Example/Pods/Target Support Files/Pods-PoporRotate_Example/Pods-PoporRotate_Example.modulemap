@@ -1,0 +1,6 @@
+framework module Pods_PoporRotate_Example {
+  umbrella header "Pods-PoporRotate_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

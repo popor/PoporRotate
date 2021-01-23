@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'PoporRotate_Example' do
+  pod 'PoporRotate', :path => '../'
+  
+  pod 'Masonry'
+  
+  target 'PoporRotate_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
