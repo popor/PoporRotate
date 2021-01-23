@@ -19,23 +19,28 @@
         self.motionManager = [[CMMotionManager alloc] init];
     }
     // 刷新数据频率
-    self.motionManager.deviceMotionUpdateInterval = 1/15.0;
+    self.motionManager.deviceMotionUpdateInterval = 1/20.0;
     
     // 判断设备的传感器是否可用
     if (self.motionManager.deviceMotionAvailable) {
         NSLog(@"PoporMotionManager : Device Motion(陀螺仪) Available");
         __weak typeof(self) weakSelf = self;
         [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]  withHandler: ^(CMDeviceMotion *motion, NSError*error){
-            if (weakSelf.finishBolck) {
-                weakSelf.finishBolck(weakSelf, YES);
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (weakSelf.finishBolck) {
+                    weakSelf.finishBolck(weakSelf, YES);
+                }
+            });
         }];
     } else {
         NSLog(@"PoporMotionManager : No device motion(陀螺仪) on device.");
         self.motionManager = nil;
-        if (self.finishBolck) {
-            self.finishBolck(self, NO);
-        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.finishBolck) {
+                self.finishBolck(self, NO);
+            }
+        });
     }
 }
 
@@ -64,7 +69,7 @@
     double y = deviceMotion.gravity.y;
     
     if (fabs(y) >= fabs(x)) {
-        if (y >= 0){
+        if (y > 0){
             //NSLog(@"PoporOrientation PoporMotionManager: UIDeviceOrientationPortraitUpsideDown");
             return UIDeviceOrientationPortraitUpsideDown;
         } else{
@@ -72,7 +77,7 @@
             return UIDeviceOrientationPortrait;
         }
     } else {
-        if (x >= 0){
+        if (x > 0){
             //NSLog(@"PoporOrientation PoporMotionManager: UIDeviceOrientationLandscapeRight");
             return UIDeviceOrientationLandscapeRight;
         } else{

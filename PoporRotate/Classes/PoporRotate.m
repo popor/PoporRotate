@@ -17,17 +17,11 @@
         instance = [PoporRotate new];
         
         // vc nc
-        instance.vcAutorotate        = NO;
-        instance.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
+        instance.autorotate        = NO;
+        instance.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
         
         instance.vcAutorotate_moment = NO;
         instance.vcAutorotate_moment_delay = 0.1;
-        
-        // ac
-        instance.acAutorotate      = NO;
-        instance.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
-        NSLog(@"UIAlertController 全局修改为 不可旋转, 默认为竖屏。iPad需要修改配置。");
-        
     });
     return instance;
 }
@@ -42,18 +36,17 @@
 }
 
 #pragma mark - VC 部分
-- (void)vcOrientationAll {
-    self.vcAutorotate = YES;
+- (void)orientationAll {
+    self.autorotate = YES;
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
+        self.supportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
     } else {
-        self.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
+        self.supportedInterfaceOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
     }
     
     self.pMM = [PoporMotionManager new];
     [self.pMM startMonitor:^(PoporMotionManager *poporMotionManager, BOOL success) {
-        poporMotionManager.finishBolck = nil;
         if (success) {
             UIDeviceOrientation pmmDeviceOrientation = poporMotionManager.deviceOrientation;
             [UIDevice updateOrientation:pmmDeviceOrientation];
@@ -64,30 +57,29 @@
     }];
 }
 
-- (void)vcOrientationLeft {
+- (void)orientationLeft {
     self.vcAutorotate_moment = YES;
-    self.vcAutorotate = NO;
-    self.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeRight;
+    self.autorotate = NO;
+    self.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeRight;
     [UIDevice updateOrientation:UIDeviceOrientationLandscapeLeft];
 }
 
-- (void)vcOrientationRitht {
+- (void)orientationRitht {
     self.vcAutorotate_moment = YES;
-    self.vcAutorotate = NO;
-    self.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
+    self.autorotate = NO;
+    self.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
     [UIDevice updateOrientation:UIDeviceOrientationLandscapeRight];
 }
 
-- (void)vcOrientationLandscape_priorityLeft:(BOOL)priorityLeft {
+- (void)orientationLandscape_priorityLeft:(BOOL)priorityLeft {
     // 这个左右是相反的
     UIDeviceOrientation priorityDeviceOrientation = !priorityLeft ? UIDeviceOrientationLandscapeLeft:UIDeviceOrientationLandscapeRight;
     
-    self.vcAutorotate = YES;
-    self.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskLandscape;
+    self.autorotate = YES;
+    self.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscape;
     
     self.pMM = [PoporMotionManager new];
     [self.pMM startMonitor:^(PoporMotionManager *poporMotionManager, BOOL success) {
-        poporMotionManager.finishBolck = nil;
         if (success) {
             UIDeviceOrientation pmmDeviceOrientation = poporMotionManager.deviceOrientation;
             if (pmmDeviceOrientation != UIDeviceOrientationLandscapeLeft
@@ -103,23 +95,22 @@
     }];
 }
 
-- (void)vcOrientationUp {
+- (void)orientationUp {
     self.vcAutorotate_moment = YES;
-    self.vcAutorotate = NO;
-    self.vcSupportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
+    self.autorotate = NO;
+    self.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
     [UIDevice updateOrientation:UIDeviceOrientationPortrait];
 }
 
-- (void)vcOrientationVertical_priorityUp:(BOOL)priorityUp {
+- (void)orientationVertical_priorityUp:(BOOL)priorityUp {
     // 这个左右是相反的
     UIDeviceOrientation priorityDeviceOrientation = priorityUp ? UIDeviceOrientationPortrait:UIDeviceOrientationPortraitUpsideDown;
     
-    self.vcAutorotate = YES;
-    self.vcSupportedInterfaceOrientations = UIDeviceOrientationPortrait +UIDeviceOrientationPortraitUpsideDown;
+    self.autorotate = YES;
+    self.supportedInterfaceOrientations = UIDeviceOrientationPortrait +UIDeviceOrientationPortraitUpsideDown;
     
     self.pMM = [PoporMotionManager new];
     [self.pMM startMonitor:^(PoporMotionManager *poporMotionManager, BOOL success) {
-        poporMotionManager.finishBolck = nil;
         if (success) {
             UIDeviceOrientation pmmDeviceOrientation = poporMotionManager.deviceOrientation;
             if (pmmDeviceOrientation != UIDeviceOrientationPortrait
@@ -136,61 +127,5 @@
     
 }
 
-#pragma mark - AC 部分
-- (void)acOrientationAll {
-    self.acAutorotate = YES;
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
-    } else {
-        self.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
-    }
-}
-
-- (void)acOrientationLeft {
-    self.acAutorotate = NO;
-    self.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeRight;
-}
-
-- (void)acOrientationRitht {
-    self.acAutorotate = NO;
-    self.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
-}
-
-- (void)acOrientationLandscape_priorityLeft:(BOOL)priorityLeft {
-    self.acAutorotate = YES;
-    self.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskLandscape;
-}
-
-- (void)acOrientationUp {
-    self.acAutorotate = NO;
-    self.acSupportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
-}
-
-- (void)acOrientationVertical_priorityUp:(BOOL)priorityUp {
-    // 这个左右是相反的
-    UIDeviceOrientation priorityDeviceOrientation = priorityUp ? UIDeviceOrientationPortrait:UIDeviceOrientationPortraitUpsideDown;
-    
-    self.vcAutorotate = YES;
-    self.vcSupportedInterfaceOrientations = UIDeviceOrientationPortrait +UIDeviceOrientationPortraitUpsideDown;
-    
-    self.pMM = [PoporMotionManager new];
-    [self.pMM startMonitor:^(PoporMotionManager *poporMotionManager, BOOL success) {
-        poporMotionManager.finishBolck = nil;
-        if (success) {
-            UIDeviceOrientation pmmDeviceOrientation = poporMotionManager.deviceOrientation;
-            if (pmmDeviceOrientation != UIDeviceOrientationPortrait
-                && pmmDeviceOrientation != UIDeviceOrientationPortraitUpsideDown) {
-                [UIDevice updateOrientation:priorityDeviceOrientation];
-            } else {
-                [UIDevice updateOrientation:pmmDeviceOrientation];
-            }
-        } else {
-            [UIDevice updateOrientation:priorityDeviceOrientation];
-        }
-        [poporMotionManager stopMonitor];
-    }];
-    
-}
 
 @end

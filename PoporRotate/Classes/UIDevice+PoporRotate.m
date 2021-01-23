@@ -11,39 +11,30 @@
 @implementation UIDevice (PoporRotate)
 
 + (void)updateOrientation:(UIDeviceOrientation)orientation {
-    [self updateOrientation_3:orientation];
-}
-
-+ (void)updateOrientation_3:(UIDeviceOrientation)orientation {
-    [self updateOrientation_once:orientation];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateOrientation_once:orientation];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateOrientation_once:orientation];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateOrientation_5:orientation];
     });
 }
 
 + (void)updateOrientation_5:(UIDeviceOrientation)orientation {
-    [self updateOrientation_once:orientation];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateOrientation_once:orientation];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateOrientation_once:orientation];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateOrientation_once:orientation];
-    });
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateOrientation_once:orientation];
-    });
+    //NSLog(@"or : %li", orientation);
+    [[self class] cancelPreviousPerformRequestsWithTarget:self];
+    
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.0];
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.1];
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.2];
+    //[self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.3];
+    //[self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.4];
+}
+
++ (void)updateOrientation_onceNumber:(NSNumber *)orientationNumber {
+    [self updateOrientation_once:orientationNumber.integerValue];
 }
 
 + (void)updateOrientation_once:(UIDeviceOrientation)orientation {
     //SEL selector = NSSelectorFromString(@"setOrientation:");
     //if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-    //NSLog(@"设定方向");
+    //NSLog(@"设定方向: %li", orientation);
     
     SEL selector = @selector(setOrientation:);
     if ([[UIDevice currentDevice] respondsToSelector:selector]) {

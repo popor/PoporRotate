@@ -23,10 +23,10 @@
 #else
     PoporRotate * pr = [PoporRotate share];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        return pr.vcSupportedInterfaceOrientations;
+        return pr.supportedInterfaceOrientations;
     } else {
         if (pr.appLoaded) {
-            return pr.vcSupportedInterfaceOrientations;
+            return pr.supportedInterfaceOrientations;
         } else {
             return UIInterfaceOrientationMaskPortrait;
         }

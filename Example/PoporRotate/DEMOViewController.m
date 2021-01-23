@@ -29,8 +29,7 @@
     self.title = @"Rotate";
     
     self.infoArray = @[
-    @[@"自动", @"左转", @"右转", @"横屏_左", @"横屏_右", @"竖屏", @"竖屏_上", @"竖屏_下",],
-    @[@"自动", @"左转", @"右转", @"横屏_左", @"横屏_右", @"竖屏", @"竖屏_上", @"竖屏_下",],
+        @[@"自动", @"左转", @"右转", @"横屏_左", @"横屏_右", @"竖屏", @"竖屏_上", @"竖屏_下",],
     ];
     self.infoTV = [self addTVs];
 }
@@ -91,16 +90,14 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     NSArray * array = self.infoArray[indexPath.section];
     switch (indexPath.section) {
         case 0:
             cell.textLabel.text = [NSString stringWithFormat:@"%li : VC %@", indexPath.row, array[indexPath.row]];
             break;
-        case 1:
-            cell.textLabel.text = [NSString stringWithFormat:@"%li : AC %@", indexPath.row, array[indexPath.row]];
-            break;
+       
         default:
             break;
     }
@@ -116,9 +113,7 @@
         case 0:
             [self vcAction:indexPath.row];
             break;
-        case 1:
-            [self acAction:indexPath.row];
-            break;
+            
         default:
             break;
     }
@@ -128,95 +123,41 @@
 - (void)vcAction:(NSInteger)tag {
     switch (tag) {
         case 0: {
-            [self.pr vcOrientationAll];
+            [self.pr orientationAll];
             break;
         }
         case 1: {
-            [self.pr vcOrientationLeft];
+            [self.pr orientationLeft];
             break;
         }
         case 2: {
-            [self.pr vcOrientationRitht];
+            [self.pr orientationRitht];
             break;
         }
         case 3: {
-            [self.pr vcOrientationLandscape_priorityLeft:YES];
+            [self.pr orientationLandscape_priorityLeft:YES];
             break;
         }
         case 4: {
-            [self.pr vcOrientationLandscape_priorityLeft:NO];
+            [self.pr orientationLandscape_priorityLeft:NO];
             break;
         }
         case 5: {
-            [self.pr vcOrientationUp];
+            [self.pr orientationUp];
             break;
         }
         case 6: { // 手边没iPad没有测试
-            [self.pr vcOrientationVertical_priorityUp:YES];
+            [self.pr orientationVertical_priorityUp:YES];
             break;
         }
         case 7: { // 手边没iPad没有测试
-            [self.pr vcOrientationVertical_priorityUp:NO];
+            [self.pr orientationVertical_priorityUp:NO];
             break;
         }
         default:
             break;
     }
 }
-
-- (void)acAction:(NSInteger)tag {
-    switch (tag) {
-        case 0: {
-            [self.pr acOrientationAll];
-            break;
-        }
-        case 1: {
-            [self.pr acOrientationLeft];
-            break;
-        }
-        case 2: {
-            [self.pr acOrientationRitht];
-            break;
-        }
-        case 3: {
-            [self.pr acOrientationLandscape_priorityLeft:YES];
-            break;
-        }
-        case 4: {
-            [self.pr acOrientationLandscape_priorityLeft:NO];
-            break;
-        }
-        case 5: {
-            [self.pr acOrientationUp];
-            break;
-        }
-        case 6: { // 手边没iPad没有测试
-            [self.pr acOrientationVertical_priorityUp:YES];
-            break;
-        }
-        case 7: { // 手边没iPad没有测试
-            [self.pr acOrientationVertical_priorityUp:NO];
-            break;
-        }
-        default:
-            break;
-    }
-    
-    {
-        UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提醒" message:@"确认吗?" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-        }];
-        
-        [oneAC addAction:cancleAction];
-        [oneAC addAction:okAction];
-        
-        [self.navigationController presentViewController:oneAC animated:YES completion:nil];
-    }
-}
-
 
 - (CGFloat)statusBarHeight {
     if (@available(iOS 11.0, *)) {

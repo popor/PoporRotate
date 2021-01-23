@@ -31,7 +31,6 @@
 		637FDBAF72FFF3C17CDED6C8B2CEFDAA /* Pods-PoporRotate_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D624A5FA55368C819B31CC6DFA8EF2 /* Pods-PoporRotate_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		696E9DF3832A7B13E9CEE2696FD37650 /* UIDevice+PoporRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D1C90568711CB913968D3EEE0443CD /* UIDevice+PoporRotate.m */; };
 		6A6AD3A5BBDBFD0B4AF936BD518EC0B1 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF8069504999FB8BF5FA1529175AA74 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		718B83A5685CA526EB1FDBE7598ADAB3 /* UIAlertController+PoporRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918A5616F62A2AE6116CD4A90889D5B /* UIAlertController+PoporRotate.m */; };
 		78B2727EE5D693F58D019DB098005101 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 470C5CD1265270E95A8A89443C727427 /* MASConstraintMaker.m */; };
 		7BFF65958F014760B6AC4742824892EB /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7CC7527FD599A1064055C060E14B43 /* MASCompositeConstraint.m */; };
 		7E7150AF9DC244CD658129AD573AD563 /* Pods-PoporRotate_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A03F02E5922B5498BD29993A952FBAC1 /* Pods-PoporRotate_Example-dummy.m */; };
@@ -52,7 +51,6 @@
 		BCD8181777433BEDC0E58EF66DB9AFB4 /* PoporRotate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C80833DFEB2F4D6E27ADA78E0DAC38B5 /* PoporRotate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF577A22B1052704F0AC2FEB2B183E33 /* PoporRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 746A7C7AD918D0F37487A01F6BDF181E /* PoporRotate.m */; };
 		C0861ADB4C5FA30F4F9E051F7638A264 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 071EEE0A3CE36E163E09EA7F7915F1DE /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		E14DD5661292A861EFFE22737B445236 /* UIAlertController+PoporRotate.h in Headers */ = {isa = PBXBuildFile; fileRef = C344392A8366A02F78FD6A77C4F8EFBE /* UIAlertController+PoporRotate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7CA20228B3583F41927813EE904CAD3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86765B456E483806C4E13D2DD50E40A4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8DD5D1D406150E1C80AD015271B6848 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9073C3B74BC30C55B4EB5B2A596EAD72 /* MASConstraint.m */; };
 		EAE8B0895956885A752B173683A0D889 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = D12E9F350C1C8076BE92719B89951AD8 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,11 +86,11 @@
 		02CA69FDFD4D7BB11F8E3E2E7A0B9879 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		047EE388CF208BD5F57049BD98558C94 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		071EEE0A3CE36E163E09EA7F7915F1DE /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		10449F78B2DBA907B29A1A6623A55561 /* Pods_PoporRotate_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PoporRotate_Tests.framework; path = "Pods-PoporRotate_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10449F78B2DBA907B29A1A6623A55561 /* Pods_PoporRotate_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporRotate_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1303B09B3C976776EC5342974085EECF /* Pods-PoporRotate_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoporRotate_Example-umbrella.h"; sourceTree = "<group>"; };
 		19584E8CC0CD2756BA4A70F7E34572EA /* Pods-PoporRotate_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporRotate_Example-Info.plist"; sourceTree = "<group>"; };
 		1CB7175777879AA777E69F9D0762BCF4 /* PoporRotate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoporRotate-dummy.m"; sourceTree = "<group>"; };
-		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E12E3D2779B5C7A8301A94F715DB4C /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		2929CDD1F71C284803E522DFF684CD10 /* PoporMotionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoporMotionManager.h; path = PoporRotate/Classes/PoporMotionManager.h; sourceTree = "<group>"; };
 		2CFD0F8F69525101CF78E9F6F2539317 /* Pods-PoporRotate_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporRotate_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,14 +106,13 @@
 		48D243C4C312CD94A58A4B73EDCF5DD3 /* PoporMotionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporMotionManager.m; path = PoporRotate/Classes/PoporMotionManager.m; sourceTree = "<group>"; };
 		4AD89987EC7EAE20D7034EEF9935E7CC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		55960467D1B758EC688A18A171012E78 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		5918A5616F62A2AE6116CD4A90889D5B /* UIAlertController+PoporRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+PoporRotate.m"; path = "PoporRotate/Classes/UIAlertController+PoporRotate.m"; sourceTree = "<group>"; };
 		607937A372913475EE7EAE532760ACD4 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		64A7B98B4EE539C4E9DEB4E23DF97E6C /* PoporRotate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoporRotate.debug.xcconfig; sourceTree = "<group>"; };
 		6698B38D727123EC6962668940DE2A05 /* UINavigationController+PoporRotate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+PoporRotate.h"; path = "PoporRotate/Classes/UINavigationController+PoporRotate.h"; sourceTree = "<group>"; };
 		6CF8069504999FB8BF5FA1529175AA74 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		6E17443EA85E103F4DD0553AB6BB942A /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		6FF4AF21902029EC43C354AC0978CE49 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		71F15F754C65C6E5DE96B75EBCF74156 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		71F15F754C65C6E5DE96B75EBCF74156 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		72A95F8027E3EB86CB9AE2D7539201FE /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		746A7C7AD918D0F37487A01F6BDF181E /* PoporRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PoporRotate.m; path = PoporRotate/Classes/PoporRotate.m; sourceTree = "<group>"; };
 		7C3840E76832E733A022D0EB39062EEA /* PoporRotate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PoporRotate.modulemap; sourceTree = "<group>"; };
@@ -127,14 +124,14 @@
 		8CA99278CDECB37F17B83E428B012EA0 /* Pods-PoporRotate_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporRotate_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9073C3B74BC30C55B4EB5B2A596EAD72 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		92D74DBCB8488D34046344A722AA8FDA /* Pods-PoporRotate_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoporRotate_Tests-Info.plist"; sourceTree = "<group>"; };
-		9D457EDBD6BB3A7CE72A0EFE27861996 /* Pods_PoporRotate_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PoporRotate_Example.framework; path = "Pods-PoporRotate_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D457EDBD6BB3A7CE72A0EFE27861996 /* Pods_PoporRotate_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporRotate_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FA63ABB78136EABA9A00A970E43B38B /* PoporRotate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporRotate-prefix.pch"; sourceTree = "<group>"; };
 		A03F02E5922B5498BD29993A952FBAC1 /* Pods-PoporRotate_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoporRotate_Example-dummy.m"; sourceTree = "<group>"; };
 		A07311779564F14EA1A41B4BF0E2D4A8 /* Pods-PoporRotate_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PoporRotate_Tests.modulemap"; sourceTree = "<group>"; };
 		A20828AAF4E3FBFAD25A582AD1CA2092 /* UINavigationController+PoporRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+PoporRotate.m"; path = "PoporRotate/Classes/UINavigationController+PoporRotate.m"; sourceTree = "<group>"; };
 		A3D1C90568711CB913968D3EEE0443CD /* UIDevice+PoporRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+PoporRotate.m"; path = "PoporRotate/Classes/UIDevice+PoporRotate.m"; sourceTree = "<group>"; };
-		A5619E04B936A5F4C2324D6EF93D06B2 /* PoporRotate.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PoporRotate.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5619E04B936A5F4C2324D6EF93D06B2 /* PoporRotate.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PoporRotate.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A78D3443F105E00FC21FE5A357C8F716 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		A85AE9E36F67A1B513CB8DA940771B4F /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		A8BCCE8C6C17F326AFEDF4357C62ADAF /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
@@ -145,7 +142,6 @@
 		BDB676D9D5D3AFD89D8DDCE3369D4BAC /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		BEA78BE2FBAE3389CC745756293E5C00 /* UIViewController+PoporRotate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+PoporRotate.m"; path = "PoporRotate/Classes/UIViewController+PoporRotate.m"; sourceTree = "<group>"; };
 		BF42B448AA562DAD9AFCF6BF0AC6F1BF /* Pods-PoporRotate_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoporRotate_Tests-dummy.m"; sourceTree = "<group>"; };
-		C344392A8366A02F78FD6A77C4F8EFBE /* UIAlertController+PoporRotate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+PoporRotate.h"; path = "PoporRotate/Classes/UIAlertController+PoporRotate.h"; sourceTree = "<group>"; };
 		C4A7EEFAAA106477A583F4B4FE0AA427 /* Pods-PoporRotate_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporRotate_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C80833DFEB2F4D6E27ADA78E0DAC38B5 /* PoporRotate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporRotate-umbrella.h"; sourceTree = "<group>"; };
 		CCFE5905C21717E682A18D0AC931CFEB /* Pods-PoporRotate_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PoporRotate_Example.modulemap"; sourceTree = "<group>"; };
@@ -156,11 +152,11 @@
 		E7851906D7976272A721C8C4E0CE9092 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EB7CC7527FD599A1064055C060E14B43 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
-		EC93966BDB23898BA960F88B55249194 /* PoporRotate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PoporRotate.framework; path = PoporRotate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC93966BDB23898BA960F88B55249194 /* PoporRotate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoporRotate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEE5BFFFDB5871DE1C71416734A2347 /* Pods-PoporRotate_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoporRotate_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EDA8A3885BC33F25CB32442EB2449111 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		F287598D192FA586BD4AECCD85B988A4 /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
-		F4AD65267DFFD8AB5EED246BE64B0FFD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F4AD65267DFFD8AB5EED246BE64B0FFD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F8D624A5FA55368C819B31CC6DFA8EF2 /* Pods-PoporRotate_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoporRotate_Tests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,7 +242,6 @@
 				342C4D9B5E1E36390E7AF01E35444998 /* ViewController+MASAdditions.m */,
 				C84A449C2DE4F91F0620A5147DD42E0F /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -380,8 +375,6 @@
 				48D243C4C312CD94A58A4B73EDCF5DD3 /* PoporMotionManager.m */,
 				7C547ADEC181D44EDDB7081D8103A7A3 /* PoporRotate.h */,
 				746A7C7AD918D0F37487A01F6BDF181E /* PoporRotate.m */,
-				C344392A8366A02F78FD6A77C4F8EFBE /* UIAlertController+PoporRotate.h */,
-				5918A5616F62A2AE6116CD4A90889D5B /* UIAlertController+PoporRotate.m */,
 				01D61FA755B32DF4613A01490CADE8C0 /* UIDevice+PoporRotate.h */,
 				A3D1C90568711CB913968D3EEE0443CD /* UIDevice+PoporRotate.m */,
 				6698B38D727123EC6962668940DE2A05 /* UINavigationController+PoporRotate.h */,
@@ -436,7 +429,6 @@
 				410FF22DE41D7D1858B4B9958EDF7CE0 /* PoporMotionManager.h in Headers */,
 				BCD8181777433BEDC0E58EF66DB9AFB4 /* PoporRotate-umbrella.h in Headers */,
 				A4A4A75B02A6E2074254EEACB9B7D414 /* PoporRotate.h in Headers */,
-				E14DD5661292A861EFFE22737B445236 /* UIAlertController+PoporRotate.h in Headers */,
 				4D43EAB0D36130B82F56DFCDD8A8650C /* UIDevice+PoporRotate.h in Headers */,
 				0573DB3F0672B0DB98C7618AC7998157 /* UINavigationController+PoporRotate.h in Headers */,
 				184DC623B71E4F25DDC6EEEBBC8ECAB9 /* UIViewController+PoporRotate.h in Headers */,
@@ -632,7 +624,6 @@
 				84C1B09FEA69D0031C136B410869F92C /* PoporMotionManager.m in Sources */,
 				B07188E2ED0A60A370D611F15073EEBA /* PoporRotate-dummy.m in Sources */,
 				BF577A22B1052704F0AC2FEB2B183E33 /* PoporRotate.m in Sources */,
-				718B83A5685CA526EB1FDBE7598ADAB3 /* UIAlertController+PoporRotate.m in Sources */,
 				696E9DF3832A7B13E9CEE2696FD37650 /* UIDevice+PoporRotate.m in Sources */,
 				AAF9D3C37F9D090E7393465662CE3702 /* UINavigationController+PoporRotate.m in Sources */,
 				837C2E84E49D3714D5DE5A48CA808071 /* UIViewController+PoporRotate.m in Sources */,
@@ -944,8 +935,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -21,7 +21,7 @@
         share.vcAutorotate_moment = NO;
         return YES;
     } else {
-        return share.vcAutorotate;
+        return share.autorotate;
     }
 }
 

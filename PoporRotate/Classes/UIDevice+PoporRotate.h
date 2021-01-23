@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDevice (PoporRotate)
 
-+ (void)updateOrientation:(UIDeviceOrientation)orientation; // 等同于3
-+ (void)updateOrientation_3:(UIDeviceOrientation)orientation;
++ (void)updateOrientation:(UIDeviceOrientation)orientation; // 等同于5
 + (void)updateOrientation_5:(UIDeviceOrientation)orientation;
+
++ (void)updateOrientation_onceNumber:(NSNumber *)orientationNumber;
 + (void)updateOrientation_once:(UIDeviceOrientation)orientation; // 基础函数
 
 + (CGFloat)portainWidth;

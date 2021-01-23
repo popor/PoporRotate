@@ -12,7 +12,6 @@
 
 #import "PoporMotionManager.h"
 #import "PoporRotate.h"
-#import "UIAlertController+PoporRotate.h"
 #import "UIDevice+PoporRotate.h"
 #import "UINavigationController+PoporRotate.h"
 #import "UIViewController+PoporRotate.h"
