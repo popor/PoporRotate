@@ -17,7 +17,7 @@
 }
 
 + (void)updateOrientation_3:(UIDeviceOrientation)orientation{
-    //NSLog(@"or : %li", orientation);
+    //NSLog(@"设备方向 : %li", orientation);
     [[self class] cancelPreviousPerformRequestsWithTarget:self];
     
     [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.0];
@@ -26,7 +26,7 @@
 }
 
 + (void)updateOrientation_5:(UIDeviceOrientation)orientation{
-    //NSLog(@"or : %li", orientation);
+    //NSLog(@"设备方向 : %li", orientation);
     [[self class] cancelPreviousPerformRequestsWithTarget:self];
     
     [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.0];
@@ -43,7 +43,7 @@
 + (void)updateOrientation_once:(UIDeviceOrientation)orientation {
     //SEL selector = NSSelectorFromString(@"setOrientation:");
     //if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-    //NSLog(@"设定方向: %li", orientation);
+    //NSLog(@"设备方向 once : %li", orientation);
     
     SEL selector = @selector(setOrientation:);
     if ([[UIDevice currentDevice] respondsToSelector:selector]) {
@@ -54,24 +54,6 @@
         [invocation setArgument:&val atIndex:2];//从2开始，因为0 1 两个参数已经被selector和target占用
         [invocation invoke];
     }
-}
-
-+ (CGFloat)portainWidth {
-    static CGFloat width;
-    if (width == 0) {
-        CGSize size = [[UIScreen mainScreen] bounds].size;
-        width = MIN(size.width, size.height);
-    }
-    return width;
-}
-
-+ (CGFloat)portainHeight {
-    static CGFloat height;
-    if (height == 0) {
-        CGSize size = [[UIScreen mainScreen] bounds].size;
-        height = MAX(size.width, size.height);
-    }
-    return height;
 }
 
 + (UIInterfaceOrientation)interfaceOrientation_deviceOrientation:(UIDeviceOrientation)deviceOrientation {
@@ -137,6 +119,21 @@
         }
     }
     return iom;
+}
+
++ (UIDeviceOrientation)deviceOrientation_interfaceOrientationMask:(UIInterfaceOrientationMask)ioMask {
+    UIDeviceOrientation deviceOrientation;
+    if (ioMask & UIInterfaceOrientationMaskPortrait) {
+        deviceOrientation = UIDeviceOrientationPortrait;
+    } else if (ioMask & UIInterfaceOrientationMaskLandscapeLeft) {
+        deviceOrientation = UIDeviceOrientationLandscapeLeft;
+    } else if (ioMask & UIInterfaceOrientationMaskLandscapeRight) {
+        deviceOrientation = UIDeviceOrientationLandscapeRight;
+    } else if (ioMask & UIInterfaceOrientationMaskPortraitUpsideDown) {
+        deviceOrientation = UIDeviceOrientationPortraitUpsideDown;
+    }
+    
+    return deviceOrientation;
 }
 
 + (UIImageOrientation)imageOrientation_deviceOrientation:(UIDeviceOrientation)deviceOrientation {
