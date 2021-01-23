@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDevice (PoporRotate)
 
-+ (void)updateOrientation:(UIDeviceOrientation)orientation; // 等同于5
++ (void)updateOrientation:(UIDeviceOrientation)orientation; // 等同于3
++ (void)updateOrientation_3:(UIDeviceOrientation)orientation;
 + (void)updateOrientation_5:(UIDeviceOrientation)orientation;
 
 + (void)updateOrientation_onceNumber:(NSNumber *)orientationNumber;

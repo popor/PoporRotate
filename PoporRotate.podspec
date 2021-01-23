@@ -8,18 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporRotate'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of PoporRotate.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.version          = '1.0'
+  s.summary          = '屏幕旋转逻辑'
+  s.description      = "简化屏幕旋转逻辑, 包含使用陀螺仪检测当前屏幕方向代码"
 
   s.homepage         = 'https://github.com/popor/PoporRotate'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

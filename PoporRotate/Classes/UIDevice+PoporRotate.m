@@ -12,19 +12,28 @@
 
 + (void)updateOrientation:(UIDeviceOrientation)orientation {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self updateOrientation_5:orientation];
+        [self updateOrientation_3:orientation];
     });
 }
 
-+ (void)updateOrientation_5:(UIDeviceOrientation)orientation {
++ (void)updateOrientation_3:(UIDeviceOrientation)orientation{
     //NSLog(@"or : %li", orientation);
     [[self class] cancelPreviousPerformRequestsWithTarget:self];
     
     [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.0];
     [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.1];
     [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.2];
-    //[self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.3];
-    //[self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.4];
+}
+
++ (void)updateOrientation_5:(UIDeviceOrientation)orientation{
+    //NSLog(@"or : %li", orientation);
+    [[self class] cancelPreviousPerformRequestsWithTarget:self];
+    
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.0];
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.1];
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.2];
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.3];
+    [self performSelector:@selector(updateOrientation_onceNumber:) withObject:@(orientation) afterDelay:0.4];
 }
 
 + (void)updateOrientation_onceNumber:(NSNumber *)orientationNumber {
