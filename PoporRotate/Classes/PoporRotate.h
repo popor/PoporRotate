@@ -11,6 +11,9 @@
 #import "UIDevice+PoporRotate.h"
 
 NS_ASSUME_NONNULL_BEGIN
+/**
+ 用法可以参考 README.md
+ */
 
 @interface PoporRotate : NSObject
 
