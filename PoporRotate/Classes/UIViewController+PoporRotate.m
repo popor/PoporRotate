@@ -17,8 +17,8 @@
     PoporRotate * share = [PoporRotate share];
     //NSLog(@"VC class: %@, .autorotate: %i", NSStringFromClass([self class]), share.autorotate);
     
-    if (share.vcAutorotate_moment) {
-        share.vcAutorotate_moment = NO;
+    if (share.autorotate_moment) {
+        share.autorotate_moment = NO;
         return YES;
     } else {
         return share.autorotate;

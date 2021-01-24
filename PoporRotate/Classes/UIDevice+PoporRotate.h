@@ -19,6 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)updateOrientation_onceNumber:(NSNumber *)orientationNumber;
 + (void)updateOrientation_once:(UIDeviceOrientation)orientation; // 基础函数
 
+/*
+ UIDeviceOrientation:        UIDeviceOrientationLandscapeLeft, // home 在右边, 最原始的.
+ 
+ // 下面2个字面意义相等, 和上面的相反.
+ UIInterfaceOrientation:     UIInterfaceOrientationLandscapeLeft     = UIDeviceOrientationLandscapeRight. (UIDeviceOrientationLandscapeLeft)
+ UIInterfaceOrientationMask: UIInterfaceOrientationMaskLandscapeLeft = UIInterfaceOrientationLandscapeLeft;
+ */
 + (UIInterfaceOrientation)interfaceOrientation_deviceOrientation:(UIDeviceOrientation)deviceOrientation;
 + (UIInterfaceOrientationMask)interfaceOrientationMask_deviceOrientation:(UIDeviceOrientation)deviceOrientation;
 + (UIDeviceOrientation)deviceOrientation_interfaceOrientationMask:(UIInterfaceOrientationMask)ioMask;

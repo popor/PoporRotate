@@ -18,8 +18,8 @@
     //UIViewController * vc = self.topViewController;
     //NSLog(@"NC class: %@, vc:%@, autorotate_moment:%i, .autorotate: %i", NSStringFromClass([self class]), NSStringFromClass([vc class]), share.vcAutorotate_moment, share.vcAutorotate);
     
-    if (share.vcAutorotate_moment) {
-        share.vcAutorotate_moment = NO;
+    if (share.autorotate_moment) {
+        share.autorotate_moment = NO;
         return YES;
     } else {
         return share.autorotate;

@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic        ) BOOL autorotate;
 @property (nonatomic        ) UIInterfaceOrientationMask supportedInterfaceOrientations; // 默认为UIInterfaceOrientationMaskPortrait
 
-@property (nonatomic        ) BOOL vcAutorotate_moment;// 打开一段时间后关闭, 默认为0.1秒后关闭
-@property (nonatomic        ) CGFloat vcAutorotate_moment_delay;// 默认为0.1秒后关闭
+@property (nonatomic        ) BOOL autorotate_moment;// 打开一段时间后关闭, 默认为0.1秒后关闭
+@property (nonatomic        ) CGFloat autorotate_moment_delay;// 默认为0.1秒后关闭
 
 // pMM
 @property (nonatomic, strong) PoporMotionManager * pMM;
@@ -34,7 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief 允许屏幕全部方向, 但是优先选择某个方向组合(priorityIOMask), 假如没有匹配则使用highIOMask
  *
- *  @param priorityIOMask 可以为UIInterfaceOrientationMaskPortrait, 也可以是:UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight. 注意不是UIDeviceOrientation类型
+ *  @param priorityIOMask 可以为UIInterfaceOrientationMaskPortrait, 也可以是:UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight. 注意不是UIDeviceOrientation类型;
+ *  注意UIInterfaceOrientation 和 UIInterfaceOrientationMask 相对于UIDeviceOrientation的左右是相反的.
+ *  
  *  @param highIOMask 包含于priorityOrientation
  *
  */

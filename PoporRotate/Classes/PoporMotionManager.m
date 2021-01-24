@@ -23,7 +23,7 @@
     
     // 判断设备的传感器是否可用
     if (self.motionManager.deviceMotionAvailable) {
-        NSLog(@"PoporMotionManager : Device Motion(陀螺仪) Available");
+        //NSLog(@"PoporMotionManager : Device Motion(陀螺仪) Available");
         __weak typeof(self) weakSelf = self;
         [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]  withHandler: ^(CMDeviceMotion *motion, NSError*error){
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -33,7 +33,7 @@
             });
         }];
     } else {
-        NSLog(@"PoporMotionManager : No device motion(陀螺仪) on device.");
+        //NSLog(@"PoporMotionManager : No device motion(陀螺仪) on device.");
         self.motionManager = nil;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -67,21 +67,26 @@
 - (UIDeviceOrientation)handleDeviceMotion:(CMDeviceMotion *)deviceMotion{
     double x = deviceMotion.gravity.x;
     double y = deviceMotion.gravity.y;
+    //NSLog(@"x:%f, y:%f", x, y);
     
     if (fabs(y) >= fabs(x)) {
-        if (y > 0){
+        if (y >= 0){
             //NSLog(@"PoporOrientation PoporMotionManager: UIDeviceOrientationPortraitUpsideDown");
+            //NSLog(@"下");
             return UIDeviceOrientationPortraitUpsideDown;
         } else{
             //NSLog(@"PoporOrientation PoporMotionManager:UIDeviceOrientationPortrait");
+            //NSLog(@"上");
             return UIDeviceOrientationPortrait;
         }
     } else {
-        if (x > 0){
+        if (x >= 0){
             //NSLog(@"PoporOrientation PoporMotionManager: UIDeviceOrientationLandscapeRight");
+            //NSLog(@"右");
             return UIDeviceOrientationLandscapeRight;
         } else{
             //NSLog(@"PoporOrientation PoporMotionManager: UIDeviceOrientationLandscapeLeft");
+            //NSLog(@"左");
             return UIDeviceOrientationLandscapeLeft;
         }
     }

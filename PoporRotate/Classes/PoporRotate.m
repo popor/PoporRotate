@@ -20,19 +20,19 @@
         instance.autorotate        = NO;
         instance.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
         
-        instance.vcAutorotate_moment = NO;
-        instance.vcAutorotate_moment_delay = 0.1;
+        instance.autorotate_moment = NO;
+        instance.autorotate_moment_delay = 0.1;
     });
     return instance;
 }
 
-- (void)setVcAutorotate_moment:(BOOL)autorotate_moment {
+- (void)setAutorotate_moment:(BOOL)autorotate_moment {
     if (autorotate_moment) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.vcAutorotate_moment_delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.vcAutorotate_moment = NO;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.autorotate_moment_delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.autorotate_moment = NO;
         });
     }
-    _vcAutorotate_moment = autorotate_moment;
+    _autorotate_moment = autorotate_moment;
 }
 
 #pragma mark - VC 部分
@@ -103,14 +103,14 @@
 }
 
 - (void)orientationLeft {
-    self.vcAutorotate_moment = YES;
+    self.autorotate_moment = YES;
     self.autorotate = NO;
     self.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeRight;
     [UIDevice updateOrientation:UIDeviceOrientationLandscapeLeft];
 }
 
 - (void)orientationRitht {
-    self.vcAutorotate_moment = YES;
+    self.autorotate_moment = YES;
     self.autorotate = NO;
     self.supportedInterfaceOrientations = UIInterfaceOrientationMaskLandscapeLeft;
     [UIDevice updateOrientation:UIDeviceOrientationLandscapeRight];
@@ -141,7 +141,7 @@
 }
 
 - (void)orientationUp {
-    self.vcAutorotate_moment = YES;
+    self.autorotate_moment = YES;
     self.autorotate = NO;
     self.supportedInterfaceOrientations = UIInterfaceOrientationMaskPortrait;
     [UIDevice updateOrientation:UIDeviceOrientationPortrait];

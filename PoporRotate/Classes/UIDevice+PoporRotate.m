@@ -126,9 +126,9 @@
     if (ioMask & UIInterfaceOrientationMaskPortrait) {
         deviceOrientation = UIDeviceOrientationPortrait;
     } else if (ioMask & UIInterfaceOrientationMaskLandscapeLeft) {
-        deviceOrientation = UIDeviceOrientationLandscapeLeft;
-    } else if (ioMask & UIInterfaceOrientationMaskLandscapeRight) {
         deviceOrientation = UIDeviceOrientationLandscapeRight;
+    } else if (ioMask & UIInterfaceOrientationMaskLandscapeRight) {
+        deviceOrientation = UIDeviceOrientationLandscapeLeft;
     } else if (ioMask & UIInterfaceOrientationMaskPortraitUpsideDown) {
         deviceOrientation = UIDeviceOrientationPortraitUpsideDown;
     } else {
