@@ -56,16 +56,9 @@
     }];
 }
 
-/**
- *  @brief 允许屏幕全部方向, 但是优先选择某个方向组合(priorityIOMask), 假如没有匹配则使用highIOMask
- *
- *  @param priorityIOMask 可以为UIInterfaceOrientationMaskPortrait, 也可以是:UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight. 注意不是UIDeviceOrientation类型
- *  @param highIOMask 包含于priorityOrientation
- *
- */
-- (void)orientation_priority:(UIInterfaceOrientationMask)priorityIOMask high:(UIInterfaceOrientationMask)highIOMask {
+- (void)orientation_all:(UIInterfaceOrientationMask)allIOMask priority:(UIInterfaceOrientationMask)priorityIOMask high:(UIInterfaceOrientationMask)highIOMask {
     self.autorotate = YES;
-    self.supportedInterfaceOrientations = priorityIOMask;
+    self.supportedInterfaceOrientations = allIOMask;
     
     self.pMM = [PoporMotionManager new];
     [self.pMM startMonitor:^(PoporMotionManager *poporMotionManager, BOOL success) {

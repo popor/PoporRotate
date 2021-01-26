@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporRotate'
-  s.version          = '1.4'
+  s.version          = '1.5'
   s.summary          = '屏幕旋转逻辑'
   s.description      =
   '简化屏幕旋转逻辑, 包含使用陀螺仪检测当前屏幕方向代码; UIInterfaceOrientationMask和UIDeviceOrientation转换; 陀螺仪检测当前屏幕方向; '

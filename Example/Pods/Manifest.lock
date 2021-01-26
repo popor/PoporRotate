@@ -1,6 +1,6 @@
 PODS:
   - Masonry (1.1.0)
-  - PoporRotate (1.4)
+  - PoporRotate (1.5)
 
 DEPENDENCIES:
   - Masonry
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PoporRotate: d7e442ea48cecc982642531ded5fe0d042d519be
+  PoporRotate: 187db0365e66a13f69aa230128fc74542b631bc4
 
 PODFILE CHECKSUM: 11568fb5e80d40fc8e4d511a16c5018c2f1865d6
 
