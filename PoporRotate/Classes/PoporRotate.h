@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - VC 部分
 - (void)orientationAll;  // iPhone只有上左右, iPad有上下左右.
 
+- (void)orientationAll_high:(UIDeviceOrientation)orientation;
+
 /**
  *  @brief 允许屏幕全部方向, 但是优先选择某个方向组合(priorityIOMask), 假如没有匹配则使用highIOMask
  *
@@ -43,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param highIOMask 包含于priorityOrientation
  *
  */
-- (void)orientationAll_priority:(UIInterfaceOrientationMask)priorityIOMask high:(UIInterfaceOrientationMask)highIOMask;
+- (void)orientation_priority:(UIInterfaceOrientationMask)priorityIOMask high:(UIInterfaceOrientationMask)highIOMask;
 
 - (void)orientationLeft; // 针对于iPhone或者iPad.
 - (void)orientationRitht;// 针对于iPhone或者iPad.

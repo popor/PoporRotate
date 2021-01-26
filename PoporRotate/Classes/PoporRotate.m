@@ -53,7 +53,6 @@
         } else {
             [UIDevice updateOrientation:UIDeviceOrientationPortrait];
         }
-        [poporMotionManager stopMonitor];
     }];
 }
 
@@ -64,20 +63,15 @@
  *  @param highIOMask 包含于priorityOrientation
  *
  */
-- (void)orientationAll_priority:(UIInterfaceOrientationMask)priorityIOMask high:(UIInterfaceOrientationMask)highIOMask {
+- (void)orientation_priority:(UIInterfaceOrientationMask)priorityIOMask high:(UIInterfaceOrientationMask)highIOMask {
     self.autorotate = YES;
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.supportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
-    } else {
-        self.supportedInterfaceOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
-    }
+    self.supportedInterfaceOrientations = priorityIOMask;
     
     self.pMM = [PoporMotionManager new];
     [self.pMM startMonitor:^(PoporMotionManager *poporMotionManager, BOOL success) {
         if (success) {
             UIInterfaceOrientationMask pmmIOMask = poporMotionManager.interfaceOrientationMask;
-            //NSLog(@"%li - %li", pmmIOMask, pmmIOMask);
+            //NSLog(@"highIOMask: %li - , pmmIOMask: %li", highIOMask, pmmIOMask);
             if (priorityIOMask & pmmIOMask) {
                 [UIDevice updateOrientation:[UIDevice deviceOrientation_interfaceOrientationMask:pmmIOMask]];
             } else {
@@ -86,7 +80,6 @@
         } else {
             [UIDevice updateOrientation:[UIDevice deviceOrientation_interfaceOrientationMask:highIOMask]];
         }
-        [poporMotionManager stopMonitor];
     }];
 }
 
@@ -136,7 +129,6 @@
         } else {
             [UIDevice updateOrientation:priorityDeviceOrientation];
         }
-        [poporMotionManager stopMonitor];
     }];
 }
 
@@ -167,7 +159,6 @@
         } else {
             [UIDevice updateOrientation:priorityDeviceOrientation];
         }
-        [poporMotionManager stopMonitor];
     }];
     
 }

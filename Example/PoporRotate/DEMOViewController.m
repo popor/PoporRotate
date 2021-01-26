@@ -135,12 +135,12 @@
         }
         case 3: {
             //[self.pr orientationLandscape_priorityLeft:YES]; // 等同于下面
-            [self.pr orientationAll_priority:UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight high:UIInterfaceOrientationMaskLandscapeRight];
+            [self.pr orientation_priority:UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight high:UIInterfaceOrientationMaskLandscapeRight];
             break;
         }
         case 4: {
             //[self.pr orientationLandscape_priorityLeft:NO]; // 等同于下面
-            [self.pr orientationAll_priority:UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight high:UIInterfaceOrientationMaskLandscapeLeft];
+            [self.pr orientation_priority:UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight high:UIInterfaceOrientationMaskLandscapeLeft];
             break;
         }
         case 5: {
