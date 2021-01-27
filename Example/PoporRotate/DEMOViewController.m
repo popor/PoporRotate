@@ -10,6 +10,20 @@
 #import <PoporRotate/PoporRotate.h>
 #import <Masonry/Masonry.h>
 
+static NSString * Rotate1_0 = @"自动";
+static NSString * Rotate1_1 = @"左转";
+static NSString * Rotate1_2 = @"右转";
+
+static NSString * Rotate2_0 = @"横屏_左";
+static NSString * Rotate2_1 = @"横屏_右";
+static NSString * Rotate2_2 = @"全部_上";
+static NSString * Rotate2_3 = @"全部_左";
+static NSString * Rotate2_4 = @"全部_右";
+
+static NSString * Rotate3_0 = @"竖屏";
+static NSString * Rotate3_1 = @"竖屏_上";
+static NSString * Rotate3_2 = @"竖屏_下";
+
 
 @interface DEMOViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak  ) PoporRotate * pr;
@@ -28,9 +42,13 @@
     
     self.title = @"Rotate";
     
-    self.infoArray = @[
-        @[@"自动", @"左转", @"右转", @"横屏_左", @"横屏_右", @"竖屏", @"竖屏_上", @"竖屏_下",],
+    self.infoArray =
+    @[
+        @[Rotate1_0, Rotate1_1, Rotate1_2,],
+        @[Rotate2_0, Rotate2_1, Rotate2_2, Rotate2_3, Rotate2_4,],
+        @[Rotate3_0, Rotate3_1, Rotate3_2,],
     ];
+    
     self.infoTV = [self addTVs];
 }
 
@@ -93,14 +111,7 @@
         //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     NSArray * array = self.infoArray[indexPath.section];
-    switch (indexPath.section) {
-        case 0:
-            cell.textLabel.text = [NSString stringWithFormat:@"%li : VC %@", indexPath.row, array[indexPath.row]];
-            break;
-       
-        default:
-            break;
-    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%li : VC %@", indexPath.row, array[indexPath.row]];
     
     return cell;
 }
@@ -109,60 +120,64 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    switch (indexPath.section) {
-        case 0:
-            [self vcAction:indexPath.row];
-            break;
-            
-        default:
-            break;
-    }
+    NSArray * array = self.infoArray[indexPath.section];
+    [self vcAction:array[indexPath.row]];
 }
 
-- (void)vcAction:(NSInteger)tag {
-    switch (tag) {
-        case 0: {
-            [self.pr orientationAll];
-            break;
-        }
-        case 1: {
-            [self.pr orientationLeft];
-            break;
-        }
-        case 2: {
-            [self.pr orientationRitht];
-            break;
-        }
-        case 3: {
-            //[self.pr orientationLandscape_priorityLeft:YES]; // 等同于下面
-            [self.pr orientation_all:UIInterfaceOrientationMaskLandscape priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeRight];
-            
-            //[self.pr orientation_all:UIInterfaceOrientationMaskAllButUpsideDown priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeRight];
-            break;
-        }
-        case 4: {
-            //[self.pr orientationLandscape_priorityLeft:NO]; // 等同于下面
-            [self.pr orientation_all:UIInterfaceOrientationMaskLandscape priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeLeft];
-            
-            
-            //[self.pr orientation_all:UIInterfaceOrientationMaskAllButUpsideDown priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeLeft];
-            break;
-        }
-        case 5: {
-            [self.pr orientationUp];
-            break;
-        }
-        case 6: { // 手边没iPad没有测试
-            [self.pr orientationVertical_priorityUp:YES];
-            break;
-        }
-        case 7: { // 手边没iPad没有测试
-            [self.pr orientationVertical_priorityUp:NO];
-            break;
-        }
-        default:
-            break;
+- (void)vcAction:(NSString *)text {
+    if ([text isEqualToString:Rotate1_0]) {
+        [self.pr orientationAll];
+        return;
     }
+    else if([text isEqualToString:Rotate1_1]) {
+        [self.pr orientationLeft];
+        return;
+    }
+    else if([text isEqualToString:Rotate1_2]) {
+        [self.pr orientationRitht];
+        return;
+    }
+    
+    //....................................................................................
+    else if([text isEqualToString:Rotate2_0]) {
+        //[self.pr orientationLandscape_priorityLeft:YES]; // 等同于下面
+        [self.pr orientation_all:UIInterfaceOrientationMaskLandscape priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeRight];
+        return;
+    }
+    else if([text isEqualToString:Rotate2_1]) {
+        //[self.pr orientationLandscape_priorityLeft:NO]; // 等同于下面
+        [self.pr orientation_all:UIInterfaceOrientationMaskLandscape priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeLeft];
+        
+        return;
+    }
+    else if([text isEqualToString:Rotate2_2]) {
+        [self.pr orientation_all:UIInterfaceOrientationMaskAll priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskPortrait];
+        return;
+    }
+    else if([text isEqualToString:Rotate2_3]) {
+        [self.pr orientation_all:UIInterfaceOrientationMaskAll priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeRight];
+        return;
+    }
+    else if([text isEqualToString:Rotate2_4]) {
+        [self.pr orientation_all:UIInterfaceOrientationMaskAll priority:UIInterfaceOrientationMaskLandscape high:UIInterfaceOrientationMaskLandscapeLeft];
+        return;
+    }
+    
+    //....................................................................................
+    else if([text isEqualToString:Rotate3_0]) {
+        [self.pr orientationUp];
+        return;
+    }
+    else if([text isEqualToString:Rotate3_1]) {
+        [self.pr orientationVertical_priorityUp:YES];
+        return;
+    }
+    else if([text isEqualToString:Rotate3_2]) {
+        [self.pr orientationVertical_priorityUp:NO];
+        return;
+    }
+    
+    
 }
 
 - (CGFloat)statusBarHeight {
